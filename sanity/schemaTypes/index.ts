@@ -1,4 +1,4 @@
-import { type SchemaTypeDefinition } from "sanity";
+import type { SchemaTypeDefinition } from "sanity";
 import profile from "./profile";
 import project from "./project";
 import skill from "./skill";
