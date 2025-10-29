@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { AppSidebar } from "@/components/app-sidebar";
+import { ModeToggle } from "@/components/DarkModeToggle";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { SanityLive } from "@/sanity/lib/live";
 
 const geistSans = Geist({
@@ -21,20 +24,30 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          {children}
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <ClerkProvider>
+          <SidebarProvider defaultOpen={false}>
+            <SidebarInset>{children}</SidebarInset>
 
-          <SanityLive />
-        </body>
-      </html>
-    </ClerkProvider>
+            <AppSidebar side="right" />
+
+            <div className="fixed md:bottom-6 md:right-24 top-4 right-18 md:top-auto md:left-auto z-20">
+              <div className="w-10 h-10 md:w-12 md:h-12">
+                <ModeToggle />
+              </div>
+            </div>
+
+            <SanityLive />
+          </SidebarProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }

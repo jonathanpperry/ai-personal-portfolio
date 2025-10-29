@@ -49,7 +49,7 @@ export const LayoutTextFlip = ({
               ease: "easeInOut",
             }}
             className={cn(
-              "inline-block whitespace-nowrap font-semibold text-primary"
+              "inline-block whitespace-nowrap font-semibold text-primary",
             )}
           >
             {words[currentIndex]}

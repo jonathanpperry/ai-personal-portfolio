@@ -20,7 +20,8 @@
       "recommended": true,
       "suspicious": {
         "noUnknownAtRules": "off"
-      }
+      },
+      "a11y": "off"
     },
     "domains": {
       "next": "recommended",
