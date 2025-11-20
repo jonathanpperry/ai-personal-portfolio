@@ -7,6 +7,7 @@ import { ModeToggle } from "@/components/DarkModeToggle";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { SanityLive } from "@/sanity/lib/live";
 import SidebarToggle from "@/components/SidebarToggle";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+          src="https://cdn.platform.openai.com/deployments/chatkit/chatkit.js"
+          strategy="afterInteractive"
+        />
         <ClerkProvider>
           <SidebarProvider defaultOpen={false}>
             <SidebarInset>{children}</SidebarInset>
