@@ -3,6 +3,7 @@ import { AboutSection } from "./sections/AboutSection";
 import { TestimonialsSection } from "./sections/TestimonialsSection";
 import { SkillsSection } from "./sections/SkillsSection";
 import { ExperienceSection } from "./sections/ExperienceSection";
+import { EducationSection } from "./sections/EducationSection";
 
 async function PortfolioContent() {
   return (
@@ -12,7 +13,7 @@ async function PortfolioContent() {
       <TestimonialsSection />
       <SkillsSection />
       <ExperienceSection />
-      {/* <EducationSection /> */}
+      <EducationSection />
       {/* <ProjectsSection /> */}
       {/* <CertificationsSection /> */}
       {/* <AchievementsSection /> */}
