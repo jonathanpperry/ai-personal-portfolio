@@ -8,6 +8,7 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { SanityLive } from "@/sanity/lib/live";
 import SidebarToggle from "@/components/SidebarToggle";
 import Script from "next/script";
+import { FloatingDock } from "@/components/FloatingDock";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,7 +45,7 @@ export default function RootLayout({
 
             <AppSidebar side="right" />
 
-            {/* <FloatingDock /> */}
+            <FloatingDock />
             <SidebarToggle />
 
             <div className="fixed md:bottom-6 md:right-24 top-4 right-18 md:top-auto md:left-auto z-20">
