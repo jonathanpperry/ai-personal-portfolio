@@ -1,6 +1,7 @@
 "use client";
 
 import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
+import type { RenderableText } from "recharts/types/component/Text";
 import {
   type ChartConfig,
   ChartContainer,
@@ -126,7 +127,7 @@ export function SkillsChart({ skills }: SkillsChartProps) {
                       position="right"
                       offset={4}
                       className="fill-foreground text-[10px] font-medium"
-                      formatter={(value: number) => `${value}%`}
+                      formatter={(value: RenderableText) => `${value ?? 0}%`}
                     />
                   </Bar>
                 </BarChart>

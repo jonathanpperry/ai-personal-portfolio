@@ -13,8 +13,6 @@ const NAVIGATION_QUERY =
 export async function FloatingDock() {
   const { data: navItems } = await sanityFetch({ query: NAVIGATION_QUERY });
 
-//   console.log("the nav items: ", navItems);
-
   if (!navItems || navItems.length === 0) {
     return null;
   }
